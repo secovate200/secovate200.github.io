@@ -1,5 +1,5 @@
 ---
-title: 1.C언어 상수와 변수
+title: 1. C언어 상수와 변수
 author: secovate200
 date: 2025-03-10 11:20:00 +0900
 categories: [Programing]

@@ -1,0 +1,50 @@
+---
+title: 2. C언어 기본입출력
+author: secovate200
+date: 2025-03-10 11:20:00 +0900
+categories: [Programing]
+tags: [C]
+mermaid: true
+---
+## 1.printf
+- printf는 문자열 또는 데이터를 화면에 출력하는 함수 
+
+```c
+#include<stdio.h>
+int main(void){
+    printf("Hello World");
+    return 0;
+}
+``` 
+## 2.scanf
+- c언어는 특정한 변수에 값을 넣기 위해 사용
+
+```c
+scanf( const char *format, ... );
+
+```
+
+```c
+ #include <stdio.h>
+ int main(void) {
+    int a;
+    scanf("%d", &a);
+    printf("입력한 숫자는 %d입니다.\n", a);
+
+    return 0;
+ }
+```
+
+- 위 코드는 `사용자로부터 입력받은 값을 출력`하는 코드이다.
+- scanf에서 사용된 &는 특정 변수의 주소를 의미한다 `위 코드에서는 a라는 변수 주소를 의미한다.`
+ 
+ | 타입         | 크기       | 형식 지정자 | 설명 |
+|-------------|-----------|------------|--------------------------------|
+| `int`       | 4 Bytes   | `%d`       | 정수형 데이터를 입력 및 출력 |
+| `long long` | 8 Bytes   | `%lld`     | 큰 정수형 데이터를 입력 및 출력 |
+| `double`    | 8 Bytes   | 입력: `%lf`, 출력: `%f` | 큰 실수형 데이터를 처리 |
+| `float`     | 4 Bytes   | `%f`       | 실수형 데이터를 입력 및 출력 |
+| `char`      | 1 Byte    | `%c`       | 문자 데이터를 입력 및 출력 |
+
+- 각 데이터의 형태에 맞게 사용하면 된다. 예를들어 `int`형  같은 경우 scanf에서 `%d`를 사용하면 된다. 
+
