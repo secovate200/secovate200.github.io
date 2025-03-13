@@ -7,6 +7,16 @@ int main(void){
       count ++;
     }
   }
-  printf("lÀÇ °³¼ö´Â %d °³ ÀÔ´Ï´Ù",count);
+  printf("lï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ %d ï¿½ï¿½ ï¿½Ô´Ï´ï¿½",count);
   return 0;
 }
+if (condition)
+{
+  /* code */
+}else if (condition)
+{
+  /* code */
+}else{
+  
+}
+
