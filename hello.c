@@ -1,11 +1,10 @@
 #include<stdio.h>
-int main(void){
-
-  char a[100];
-  gets(a);
-
-
-  printf("%s\n",a);
-
-  return 0;
+void add(int *a){
+ *a =(*a)+10;
 }
+ int main(void) {
+  int a=7;
+  add(&a);
+  printf("%d",a);
+  return 0;
+ }
