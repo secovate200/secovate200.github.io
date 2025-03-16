@@ -1,11 +1,24 @@
 #include <stdio.h>
-
+#include<stdlib.h>
 int main(void) {
-  int a[2][5] = { { 1, 2, 3, 4, 5 },
-                  { 6, 7, 8, 9, 10 } };
-    int (*p)[5]= &a[1];
-    for( int i=0; i<sizeof(*p)/sizeof(int); i++){
-      printf("%d ",p[0][i]);
+  int **arr=(int**)malloc(sizeof(int*)*3);
+  for (int i=0; i<3;i++){
+    *(arr+i)=(int*)malloc(sizeof(int)*3);
+  }
+  for(int i=0; i<3; i++){
+    for(int j=0; j<3; j++){
+      *(*(arr+i)+j)=i*3+j;
     }
-    return 0;
+  }
+  for(int i=0; i<3; i++){
+    for(int j=0; j<3; j++){
+      printf("%d ",*(*(arr+i)+j));
+    }
+    printf("\n");
+  }
+  for( int i=0; i<3; i++){
+    free(*(arr+i));
+}
+  free(*arr);
+  return 0;
 }
