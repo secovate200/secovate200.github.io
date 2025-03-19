@@ -1,24 +1,31 @@
-#include <stdio.h>
-#include<stdlib.h>
-int main(void) {
-  int **arr=(int**)malloc(sizeof(int*)*3);
-  for (int i=0; i<3;i++){
-    *(arr+i)=(int*)malloc(sizeof(int)*3);
+#include<stdio.h>
+int main(int argc, char** argv,char **envp){
+  int a=333333;
+  int b=135135;
+  int c=0xCC;
+
+  int xor_a=a^c;
+  int xor_b=b^c;
+
+  int res_1=xor_a^c;
+  int res_2=xor_b^c;
+
+  int res_3=a^b;
+  int res_4=xor_a^xor_b;
+
+  if(res_1==a){
+    puts("How is this True?");
   }
-  for(int i=0; i<3; i++){
-    for(int j=0; j<3; j++){
-      *(*(arr+i)+j)=i*3+j;
-    }
+  if(res_2==b){
+    puts("Wow is this also True?");
   }
-  for(int i=0; i<3; i++){
-    for(int j=0; j<3; j++){
-      printf("%d ",*(*(arr+i)+j));
-    }
-    printf("\n");
+  if(res_3==res_4){
+    puts("It Works..?");
   }
-  for( int i=0; i<3; i++){
-    free(*(arr+i));
-}
-  free(*arr);
+  else{
+    puts("It Works..!");
+  }
+  puts("It Works!");
+  puts("Xor is Good to encryption and descryption!");
   return 0;
 }
