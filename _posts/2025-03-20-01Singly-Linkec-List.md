@@ -1,6 +1,6 @@
 ---
 title: 1. 단일 연결리스트
-date: 2025-03-19 13:50:00 +0900
+date: 2025-03-20 13:50:00 +0900
 categories: ["Data Structures","Linked List"]
 tags: [C,"Singly Linked List"]
 mermaid: true

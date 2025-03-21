@@ -1,31 +1,16 @@
-#include<stdio.h>
-int main(int argc, char** argv,char **envp){
-  int a=333333;
-  int b=135135;
-  int c=0xCC;
+//1번째 예시에서 뺄셈 동작을 하는 sub() 구현하기
+#include <stdio.h>
 
-  int xor_a=a^c;
-  int xor_b=b^c;
-
-  int res_1=xor_a^c;
-  int res_2=xor_b^c;
-
-  int res_3=a^b;
-  int res_4=xor_a^xor_b;
-
-  if(res_1==a){
-    puts("How is this True?");
-  }
-  if(res_2==b){
-    puts("Wow is this also True?");
-  }
-  if(res_3==res_4){
-    puts("It Works..?");
-  }
-  else{
-    puts("It Works..!");
-  }
-  puts("It Works!");
-  puts("Xor is Good to encryption and descryption!");
-  return 0;
+int add(int a, int b) {
+    return a + b;
+}
+int sub(int a,int b){
+  return a-b;
+}
+int main() {
+    int result = add(5, 10);
+    printf("The add result is %d\n", result);
+    result=sub(5,10);
+    printf("The sub result is %d\n", result);
+    return 0;
 }

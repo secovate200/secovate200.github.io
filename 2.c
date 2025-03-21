@@ -1,51 +1,56 @@
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct Node{
+typedef struct Node
+{
     int data;
+    struct Node *prev;
     struct Node *next;
+    
 }Node;
+Node *head, *tail; //head와 Tail을 선언한다.
 
-void add(Node* root, int data){
-    Node *node =(Node*)malloc(sizeof(Node));
-    node->data= data;
-    node->next=root->next;
-    root->next=node; 
-    if(root== NULL){
-        printf("root가 Null입니다.");
-        return;
+//삽입함수
+void insert(Node* root,int data){
+    Node *node = (Node*)malloc(sizeof(Node));
+    node->data = data;
+    
+    Node* cur = root->next;
+    root->next = node;
+    node->prev = root;
+    node->next = cur;
+
+
+}
+
+void remove_node(Node*root){
+    Node *node =root->next;
+    root->next= node->next;
+    Node *next = node->next;
+    next->prev=root;
+    free(node);
+
+}
+void show(){
+    Node *cur=head->next;
+    while(cur!=tail){
+        printf("%d ",cur->data);
+        cur=cur->next;
     }
 }
-void removeNode(Node *root){
-    Node *front= root->next;
-    root->next=front->next;
-    free(front);
-}
-
-void freeall(Node *root){
-    Node *cur= root->next;
-    while(cur !=NULL){
-        Node *next= cur->next;
-        free(cur);
-        cur= next;
-    }
-}
-void showall(Node *root){
-    Node *cur =root->next;
-    while(cur != NULL){
-        Node *next= cur->next;
-        printf("%d -> ",cur->data);
-        cur=next;
-
-    }
-    printf("NULL");
-}
-
 int main(void){
-    Node *head= malloc(sizeof(Node));
-    head->next=NULL;
-    add(head,1);
-    add(head->next,2);
-    showall(head);
-    freeall(head);
+    head = (Node*)malloc(sizeof(Node));
+    tail = (Node*)malloc(sizeof(Node));
+    head->next=tail;
+    head->prev=head;
+    tail->next=tail;
+    tail->prev=head;
+    insert(head,2);
+    insert(head,3);
+    insert(head,4);
+    insert(head,5);
+    show();
+    printf("\n");
+    remove_node(head->next);
+    show();
     return 0;
 }
