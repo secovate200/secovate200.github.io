@@ -5,7 +5,8 @@
   // Shopify Liquid
   "files.associations": {
     "*.html": "liquid",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "iostream": "cpp"
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
