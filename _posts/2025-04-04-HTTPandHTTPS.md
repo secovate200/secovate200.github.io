@@ -180,5 +180,3 @@ curl www.example.com
 - 웹 브라우저 개발자 도구를 사용하여 웹 사이트의 HTTP 통신을 살펴보기
 
 - 크롬을 기준으로 설명을 들면 `F12`버튼을 누르고 Network탭을 누르면 통신을 살펴볼수 있습니다.
-
-![Image](https://github.com/user-attachments/assets/11482a10-7167-47ba-b104-ecb7af50cd4b)
