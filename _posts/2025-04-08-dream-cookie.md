@@ -1,7 +1,7 @@
 ---
 title: " 드림핵 - Cookie "
 date: 2025-04-08 11:30 +0900
-categories: ["Web",'writeup''DreamHack']
+categories: ["Web",'write up''DreamHack']
 tags: [web ,HTML]
 mermaid: true
 ---
@@ -60,5 +60,8 @@ app.run(host='0.0.0.0', port=8000)
 - 바로username`guest`라는 것이다. 그리고 비밀번호도 `guest`라는것을 알게 되었다.
 - 로그인 성공시 쿠키값이 세팅되는데 이것이 username이라는점에서 쿠키값 변조를 통해 플래그를 얻을 수 있을것이라고 의심을 하게 되었습니다. 
 
+![이미지](https://github.com/secovate200/secovate200.github.io/blob/main/assets/img/dreamhack.png?raw=true)
 
 - 시도를 해보았고 그 결과 플래그 값을 알수 있었습니다.
+
+![flag](https://github.com/secovate200/secovate200.github.io/blob/main/assets/img/2025-04-08flag.png?raw=true)
