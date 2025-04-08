@@ -1,7 +1,7 @@
 ---
 title: " 드림핵 - Cookie "
 date: 2025-04-08 11:30 +0900
-categories: ["Web",'write up''DreamHack']
+categories: ["Web",'write up','DreamHack']
 tags: [web ,HTML]
 mermaid: true
 ---
