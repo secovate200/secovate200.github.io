@@ -3,6 +3,7 @@ title: " [1주차 TIL] KnockOn Bootcamp HTTP/HTTPS"
 date: 2025-04-04 11:30 +0900
 categories: ["Web",'Web Overview']
 tags: [web ,HTTP,HTTPS]
+img_path: /img/path/
 mermaid: true
 ---
 
@@ -163,3 +164,21 @@ sequenceDiagram
 
 
 ```
+## 도전
+- curl을 이용하여 HTTP요청 직접 보내보기
+
+    - 해당 부분은 curl을 사용하면 됩니다
+
+```bash
+
+curl www.example.com
+
+```
+
+이런 방법으로 서버로 요청을 보내볼수 있습니다.
+
+- 웹 브라우저 개발자 도구를 사용하여 웹 사이트의 HTTP 통신을 살펴보기
+
+- 크롬을 기준으로 설명을 들면 `F12`버튼을 누르고 Network탭을 누르면 통신을 살펴볼수 있습니다.
+
+![Image](https://github.com/user-attachments/assets/11482a10-7167-47ba-b104-ecb7af50cd4b)
