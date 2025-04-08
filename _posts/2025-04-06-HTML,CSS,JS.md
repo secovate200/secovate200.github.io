@@ -2,7 +2,7 @@
 title: " [1주차 TIL] KnockOn Bootcamp HTML CSS JS"
 date: 2025-04-06 11:30 +0900
 categories: ["Web",'Web Overview']
-tags: [web ,HTTP,HTTPS]
+tags: [web ,HTML,CSS,JS]
 mermaid: true
 ---
 
@@ -52,6 +52,7 @@ mermaid: true
 ```
 
 ##  주요 선택자
+
 | 선택자 | 설명 |
 |--------|------|
 | `*` | 전체 선택자 |
@@ -60,6 +61,7 @@ mermaid: true
 | `#아이디명` | 아이디 선택자 |
 
 ##  주요 스타일 속성
+
 | 속성 | 설명 | 예시 |
 |------|------|------|
 | `color` | 글자 색상 | `color: red;` |
