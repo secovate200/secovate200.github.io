@@ -10,8 +10,8 @@ mermaid: true
 설명
 - 쿠키로 인증 상태를 관리하는 간단한 로그인 서비스입니다.
 - admin 계정으로 로그인에 성공하면 플래그를 획득할 수 있습니다
-
 - 우선 소스코드를 확인 해보았습니다.
+
 ```python
 #!/usr/bin/python3
 from flask import Flask, request, render_template, make_response, redirect, url_for
