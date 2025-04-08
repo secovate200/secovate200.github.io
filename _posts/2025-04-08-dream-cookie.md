@@ -57,7 +57,8 @@ app.run(host='0.0.0.0', port=8000)
 ```
 
 - 여기서 일단 로그인 서비스 인것은 확실하게 알게 되었고 우리가 알수 있는 값이 있습니다.
-- 바로username`guest`라는 것이다. 그리고 비밀번호도 `guest`라는것을 알게 되었다.
+- 바로username 은 `guest`라는 것립니다.
+- 그리고 비밀번호도 `guest`라는것을 알게 되었습니다.
 - 로그인 성공시 쿠키값이 세팅되는데 이것이 username이라는점에서 쿠키값 변조를 통해 플래그를 얻을 수 있을것이라고 의심을 하게 되었습니다. 
 
 ![이미지](https://github.com/secovate200/secovate200.github.io/blob/main/assets/img/dreamhack.png?raw=true)
