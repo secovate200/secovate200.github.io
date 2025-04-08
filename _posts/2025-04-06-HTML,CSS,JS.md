@@ -113,3 +113,120 @@ document.getElementById("btn").addEventListener("click", function() {
   alert("버튼이 클릭되었습니다!");
 });
 ```
+
+
+## 도전
+- 간단한 자기소개 페이지 만들기
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자기소개</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>안녕하세요, 저는 김민섭입니다!</h1>
+    <p>저는 보안에 관심이 있습니다.. 현재는 웹해킹을 공부하고 있습니다. </p>
+    <h2>연락처</h2>
+    <p>Email: secovate200@gmail.com</p>
+  </div>
+</body>
+</html>
+
+```
+
+- 계산기 페이지 만들기
+
+```html 
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>간단한 계산기</title>
+  <style>
+    body {
+      background: #f5f5f5;
+   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .calculator {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 350px;
+    }
+    .calculator h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 10px 25px;
+      font-size: 1em;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      margin-top: 15px;
+      font-size: 1.3em;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>계산기</h2>
+    <input type="text" id="expression" placeholder="수식을 입력하세요 (예: 1 + 2 * 3)" onkeydown="handleKey(event)">
+    <button onclick="calculate()">계산</button>
+    <div class="result" id="result">=</div>
+  </div>
+
+  <script>
+    function handleKey(e) {
+      if (e.key === "Enter") {
+        calculate();
+      }
+    }
+
+    function calculate() {
+      const input = document.getElementById("expression").value;
+      const resultElement = document.getElementById("result");
+
+      try {
+        const sanitized = input.replace(/[^0-9+\-*/(). ]/g, '');
+        const result = new Function(`return (${sanitized})`)();
+        resultElement.textContent = `= ${result}`;
+      } catch {
+        resultElement.textContent = "오류: 올바른 수식을 입력하세요.";
+      }
+    }
+  </script>
+</body>
+</html>
+
+ ```

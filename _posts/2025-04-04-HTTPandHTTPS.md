@@ -173,6 +173,16 @@ sequenceDiagram
 
 curl www.example.com
 
+curl -I www.example.com 
+HTTP/1.1 200 OK
+Content-Type: text/html
+ETag: "84238dfc8092e5d9c0dac8ef93371a07:1736799080.121134"
+Last-Modified: Mon, 13 Jan 2025 20:11:20 GMT
+Cache-Control: max-age=2322
+Date: Tue, 08 Apr 2025 11:45:34 GMT
+Connection: keep-alive
+
+
 ```
 
 이런 방법으로 서버로 요청을 보내볼수 있습니다.
