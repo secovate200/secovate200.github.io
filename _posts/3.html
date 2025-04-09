@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Roulette Game</title>
+    <script></script>
+  </head>
+  <body>
+    <div id="roulette">1</div>
+    <button id="stopButton">정지</button>
+
+    <script>
+      const values = [1, 2, 3, 4, 5, 6];
+
+      const rouletteDisplay = document.getElementById("roulette");
+
+      let intervalId = null;
+
+      let currentIndex = 0;
+
+      function startRoulette() {
+       // intervalId = //interval 설정하기
+      }
+
+      document.getElementById("stopButton").addEventListener("click", () => {
+        clearInterval(intervalId);
+
+        alert("선택된 숫자: " + values[currentIndex]);
+      });
+
+      startRoulette();
+    </script>
+  </body>
+</html>
+
