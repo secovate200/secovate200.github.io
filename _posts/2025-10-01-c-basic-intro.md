@@ -1,7 +1,7 @@
 ---
 title: "1.C언어"
 date: 2025-10-01 11:30 +0900
-categories: ["Progtaming"]
+categories: ["Programing"]
 tags: [c]
 mermaid: true
 ---

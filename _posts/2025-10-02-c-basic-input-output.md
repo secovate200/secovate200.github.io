@@ -1,7 +1,7 @@
 ---
 title: "4.C언어 - 입출력함수"
 date: 2025-10-02 12:30 +0900
-categories: ["Progtaming"]
+categories: ["Programing"]
 tags: [c]
 mermaid: true
 ---
