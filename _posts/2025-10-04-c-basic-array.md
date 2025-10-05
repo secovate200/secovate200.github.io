@@ -1,7 +1,7 @@
 ---
 title: "7.C언어 - 배열"
 date: 2025-10-03 12:30 +0900
-categories: ["Programing"]
+categories: ["Programing","C"]
 tags: [c]
 mermaid: true
 ---

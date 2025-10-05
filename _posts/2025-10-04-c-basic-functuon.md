@@ -1,7 +1,7 @@
 ---
 title: "8.C언어 - 함수"
 date: 2025-10-04 12:30 +0900
-categories: ["Programing"]
+categories: ["Programing","C"]
 tags: [c]
 mermaid: true
 ---

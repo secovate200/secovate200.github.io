@@ -1,7 +1,7 @@
 ---
 title: "6.C언어 - 반복문"
 date: 2025-10-03 12:30 +0900
-categories: ["Programing"]
+categories: ["Programing","C"]
 tags: [c]
 mermaid: true
 ---

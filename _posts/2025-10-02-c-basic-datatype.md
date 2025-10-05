@@ -1,7 +1,7 @@
 ---
 title: "2.C언어 - datatype"
 date: 2025-10-02 12:30 +0900
-categories: ["Programing"]
+categories: ["Programing","C"]
 tags: [c]
 mermaid: true
 ---
