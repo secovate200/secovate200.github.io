@@ -1,6 +1,6 @@
 ---
 title: "11.C언어 - 구조체"
-date: 2025-10-08 12:30 +0900
+date: 2025-10-07 12:10 +0900
 categories: ["Programing","C"]
 tags: [c]
 mermaid: true
