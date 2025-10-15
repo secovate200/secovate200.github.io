@@ -81,7 +81,9 @@ typedef int ScoreArray[5];
 
 ScoreArray scores = {90, 85, 78, 92, 88};
 ```
+
 ### 함수 포인터 정의
+
 ```c
 typedef int (*OpFunc)(int, int);
 
