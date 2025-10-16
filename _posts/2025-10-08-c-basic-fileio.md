@@ -1,5 +1,5 @@
 ---
-title: "13.C언어 - 구조체"
+title: "13.C언어 - 파일 입출력"
 date: 2025-10-08 12:10 +0900
 categories: ["Programing","C"]
 tags: [c]
