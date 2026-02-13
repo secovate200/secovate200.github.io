@@ -1,6 +1,7 @@
 ---
 title: "Chirpy Theme로 Jekyll 블로그 시작하기"
 date: 2026-02-07 17:00:00 +0900
+author: secovate200
 categories: [Programming, Blogging]
 tags: [jekyll, chirpy, blog]
 math: true

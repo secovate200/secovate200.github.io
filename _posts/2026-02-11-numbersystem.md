@@ -1,6 +1,7 @@
 ---
 title: "진법 (Number Systems) 정리"
 date: 2026-02-10-17:00:00 +0900
+author: secovate200
 categories: [Computer Science]
 tags: [Number, Computer, Binary, Hex]
 
